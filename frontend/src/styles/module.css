@@ -1,0 +1,916 @@
+/* =========================================================
+   GLOBAL MODULE FAQ PAGE
+========================================================= */
+
+.module-page {
+    min-height: 100vh;
+
+    background: #f5f7f9;
+
+    color: #17365d;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.module-breadcrumb {
+    padding: 18px 16px 10px;
+
+    background: #ffffff;
+
+    font-size: 16px;
+
+    color: #303030;
+}
+
+.module-breadcrumb a {
+    color: #3028a8;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.module-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.module-breadcrumb span {
+    margin-left: 6px;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.module-title {
+    height: 58px;
+
+    margin: 0 20px 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #54238a 0%,
+            #2946a2 45%,
+            #087fd0 100%
+        );
+}
+
+.module-title::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(255,255,255,.08) 50%,
+            transparent 51%
+        );
+
+    background-size: 110px 100%;
+
+    opacity: .7;
+}
+
+.module-title h1 {
+    position: relative;
+
+    z-index: 1;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.module-layout {
+    display: grid;
+
+    grid-template-columns:
+        340px minmax(0, 1fr);
+
+    margin: 0 16px;
+
+    min-height: 700px;
+
+    background-color: #f5f7f9;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(130,145,160,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(130,145,160,.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 90px 90px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.module-sidebar {
+    min-width: 0;
+
+    border-right: 1px solid #d8dfe6;
+
+    background: rgba(247,249,251,.94);
+}
+
+.module-sidebar-inner {
+    padding: 8px 0 30px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.module-sidebar-item {
+    width: 100%;
+    min-height: 72px;
+
+    box-sizing: border-box;
+
+    padding: 10px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #17365d;
+
+    text-decoration: none;
+
+    text-align: left;
+
+    font-family: inherit;
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.module-sidebar-item:hover {
+    background: #ffffff;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR ITEM
+========================================================= */
+.module-sidebar-item.active {
+    margin: 0 8px;
+
+    width: calc(100% - 16px);
+
+    border: 1px solid #cfd8e3;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 7px rgba(30,60,90,.08);
+
+    color: #111111;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SIDEBAR ICON
+========================================================= */
+
+.module-sidebar-icon {
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 3px 7px rgba(0,0,0,.16);
+}
+
+
+/* =========================================================
+   SIDEBAR ICON COLORS
+========================================================= */
+
+.module-sidebar-icon.icon-0 {
+    background: #4b3bd1;
+}
+
+.module-sidebar-icon.icon-1 {
+    background: #e52d32;
+}
+
+.module-sidebar-icon.icon-2 {
+    background: #108fc9;
+}
+
+.module-sidebar-icon.icon-3 {
+    background: #f39a08;
+}
+
+.module-sidebar-icon.icon-4 {
+    background: #0da477;
+}
+
+.module-sidebar-icon.icon-5 {
+    background: #7b45e4;
+}
+
+.module-sidebar-icon.icon-6 {
+    background: #34445b;
+}
+
+.module-sidebar-icon.icon-7 {
+    background: #d82754;
+}
+
+.module-sidebar-icon.icon-8 {
+    background: #10a5c2;
+}
+
+.module-sidebar-icon.icon-9 {
+    background: #52657f;
+}
+
+.module-sidebar-icon.icon-10 {
+    background: #0ca99f;
+}
+
+.module-sidebar-icon.icon-11 {
+    background: #df2775;
+}
+
+.module-sidebar-icon.icon-12 {
+    background: #f4a20b;
+}
+
+.module-sidebar-icon.icon-13 {
+    background: #8744db;
+}
+
+.module-sidebar-icon.icon-14 {
+    background: #11a69d;
+}
+
+
+/* =========================================================
+   MODULE CONTENT
+========================================================= */
+
+.module-content {
+    min-width: 0;
+
+    padding:
+        42px
+        34px
+        70px;
+
+    background:
+        linear-gradient(
+            rgba(246,248,250,.72),
+            rgba(246,248,250,.72)
+        );
+}
+
+
+/* =========================================================
+   MODULE HEADING
+========================================================= */
+
+.module-content-title {
+    margin: 0 0 18px;
+
+    text-align: center;
+
+    color: #0875d1;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+}
+
+.module-content-title::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 9px;
+
+    background: #d6dce2;
+}
+
+
+/* =========================================================
+   FAQ LIST
+========================================================= */
+
+.module-faq-list {
+    width: min(100%, 1180px);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   FAQ CARD
+========================================================= */
+
+.module-faq-card {
+    margin-bottom: 20px;
+
+    padding:
+        20px
+        24px
+        22px;
+
+    border-left:
+        4px solid #0875d1;
+
+    border-radius: 4px;
+
+    background: rgba(255,255,255,.88);
+
+    box-shadow:
+        0 2px 8px rgba(30,50,70,.07);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.module-faq-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(30,50,70,.11);
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.module-faq-question {
+    margin: 0 0 14px;
+
+    color: #0069c9;
+
+    font-size: 17px;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.module-faq-answer {
+    color: #34495e;
+
+    font-size: 14.5px;
+
+    line-height: 1.65;
+}
+
+.module-faq-answer p {
+    margin:
+        0 0 13px;
+}
+
+.module-faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   ANSWER HEADINGS
+========================================================= */
+
+.module-faq-answer h3,
+.module-faq-answer h4 {
+    margin:
+        16px 0 8px;
+
+    color: #243b53;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FAQ LIST ITEMS
+========================================================= */
+
+.module-faq-answer ul,
+.module-faq-answer ol {
+    margin:
+        7px 0
+        14px
+        22px;
+
+    padding-left: 20px;
+}
+
+.module-faq-answer li {
+    margin-bottom: 7px;
+
+    line-height: 1.6;
+}
+
+.module-faq-answer li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.module-faq-answer a,
+.module-faq-link {
+    color: #0875d1;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    word-break: break-word;
+}
+
+.module-faq-answer a:hover,
+.module-faq-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CODE / COMMANDS
+========================================================= */
+
+.module-code {
+    display: inline-block;
+
+    max-width: 100%;
+
+    padding:
+        3px 8px;
+
+    border-radius: 4px;
+
+    background: #edf1f4;
+
+    color: #202b35;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   CODE BLOCK
+========================================================= */
+
+.module-code-block {
+    display: block;
+
+    margin:
+        12px 0;
+
+    padding:
+        14px 16px;
+
+    overflow-x: auto;
+
+    border-radius: 6px;
+
+    background: #1f2933;
+
+    color: #f5f7f9;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FAQ IMAGE
+========================================================= */
+
+.module-faq-image {
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin:
+        16px auto;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   IMAGE LINK
+========================================================= */
+
+.module-image-link {
+    display: block;
+
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.module-faq-answer table {
+    width: 100%;
+
+    margin:
+        16px 0;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+
+    background: #ffffff;
+}
+
+.module-faq-answer th,
+.module-faq-answer td {
+    padding:
+        9px 11px;
+
+    border:
+        1px solid #d8dfe6;
+
+    text-align: left;
+}
+
+.module-faq-answer th {
+    background: #eef3f8;
+
+    color: #17365d;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.module-back-top {
+    position: fixed;
+
+    right: 40px;
+
+    bottom: 70px;
+
+    width: 58px;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffbd1c,
+            #ff9800
+        );
+
+    color: #111;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 1100;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.22);
+
+    transition:
+        transform .2s ease;
+}
+
+.module-back-top:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.module-footer {
+    min-height: 140px;
+
+    padding:
+        35px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-top:
+        2px solid #ffae00;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #08084a 0%,
+            #1a124e 50%,
+            #75180e 100%
+        );
+
+    font-size: 16px;
+}
+
+.module-footer strong {
+    color: #ffb000;
+}
+
+.module-footer small {
+    margin-top: 12px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .module-layout {
+        grid-template-columns:
+            280px minmax(0, 1fr);
+    }
+
+    .module-sidebar-item {
+        font-size: 14px;
+    }
+
+    .module-sidebar-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+    }
+
+    .module-content {
+        padding:
+            38px
+            24px
+            60px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .module-layout {
+        display: block;
+
+        margin: 0;
+    }
+
+    .module-sidebar {
+        border-right: none;
+
+        border-bottom:
+            1px solid #d8dfe6;
+    }
+
+    .module-sidebar-inner {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .module-sidebar-item {
+        min-height: 62px;
+
+        font-size: 14px;
+    }
+
+    .module-content {
+        padding:
+            30px 18px
+            50px;
+    }
+
+    .module-faq-card {
+        padding:
+            16px
+            20px
+            18px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .module-breadcrumb {
+        padding:
+            15px 12px 8px;
+
+        font-size: 14px;
+    }
+
+    .module-title {
+        height: 50px;
+
+        margin:
+            0 10px 8px;
+    }
+
+    .module-title h1 {
+        font-size: 18px;
+    }
+
+    .module-sidebar-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .module-sidebar-item {
+        min-height: 58px;
+
+        font-size: 14px;
+    }
+
+    .module-content {
+        padding:
+            25px 12px
+            45px;
+    }
+
+    .module-content-title {
+        font-size: 18px;
+    }
+
+    .module-faq-card {
+        margin-bottom: 20px;
+
+        padding:
+            16px
+            20px
+            18px;
+    }
+
+    .module-faq-question {
+        font-size: 10px;
+
+        line-height: 1;
+    }
+
+    .module-faq-answer {
+        font-size: 10px;
+
+        line-height: 1
+    }
+
+    .module-faq-answer table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+    .module-back-top {
+        right: 18px;
+
+        bottom: 20px;
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 26px;
+    }
+
+}

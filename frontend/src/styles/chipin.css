@@ -1,0 +1,605 @@
+/* =========================================================
+   CHIPIN PAGE
+========================================================= */
+
+.chipin-page {
+    min-height: 100vh;
+    background: #eef1f5;
+    color: #26364d;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.chipin-breadcrumb {
+    padding: 18px 28px 10px;
+
+    font-size: 18px;
+
+    background: #f5f5f5;
+}
+
+.chipin-breadcrumb span:first-child {
+    color: #263f76;
+    font-weight: 700;
+}
+
+.arrow {
+    margin: 0 6px;
+    color: #666;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.chipin-title {
+    margin: 0 18px;
+
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #563176,
+            #1f70b7,
+            #08749b
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.chipin-title::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.2;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(255,255,255,0.25) 50%,
+            transparent 51%
+        );
+
+    background-size: 100px 100px;
+}
+
+
+.chipin-title h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 23px;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.chipin-layout {
+    display: flex;
+
+    min-height: calc(100vh - 250px);
+
+    background: #eef1f5;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(69, 103, 138, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(69, 103, 138, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 160px 160px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.chipin-sidebar {
+    width: 345px;
+
+    flex-shrink: 0;
+
+    padding: 20px 14px;
+
+    background:
+        rgba(242, 244, 248, 0.96);
+
+    border-right:
+        1px solid rgba(60, 80, 110, 0.15);
+
+    box-shadow:
+        5px 0 20px rgba(0, 0, 0, 0.04);
+}
+
+
+.chipin-menu-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 12px 8px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    color: #39485d;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.chipin-menu-item:hover {
+    background: rgba(34, 83, 130, 0.07);
+
+    transform: translateX(3px);
+}
+
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #2d3d52;
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.12);
+}
+
+
+/* DIFFERENT ICON COLORS */
+
+.item-0 .menu-icon {
+    background: #34339d;
+}
+
+.item-1 .menu-icon {
+    background: #db3030;
+}
+
+.item-2 .menu-icon {
+    background: #187da4;
+}
+
+.item-3 .menu-icon {
+    background: #e48b00;
+}
+
+.item-4 .menu-icon {
+    background: #238c75;
+}
+
+.item-5 .menu-icon {
+    background: #7442c7;
+}
+
+.item-6 .menu-icon {
+    background: #3c4a5c;
+}
+
+.item-7 .menu-icon {
+    background: #c62845;
+}
+
+.item-8 .menu-icon {
+    background: #168aa1;
+}
+
+.item-9 .menu-icon {
+    background: #3d4c5c;
+}
+
+.item-10 .menu-icon {
+    background: #198f87;
+}
+
+.item-11 .menu-icon {
+    background: #cf2b75;
+}
+
+.item-12 .menu-icon {
+    background: #e79400;
+}
+
+.item-13 .menu-icon {
+    background: #7739c2;
+}
+
+.item-14 .menu-icon {
+    background: #19877e;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.chipin-content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+        60px 5%
+        50px;
+}
+
+
+/* =========================================================
+   MAIN CHIPIN IMAGE
+========================================================= */
+
+.chipin-image-box {
+    max-width: 940px;
+
+    margin:
+        0 auto
+        25px;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(30, 50, 70, 0.08);
+}
+
+
+.chipin-image-box img {
+    width: 100%;
+
+    display: block;
+
+    max-height: 560px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.chipin-description {
+    max-width: 1100px;
+
+    margin: auto;
+
+    color: #4b5664;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    text-align: justify;
+}
+
+
+.chipin-description p {
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-heading {
+    max-width: 1100px;
+
+    margin:
+        25px auto
+        20px;
+
+    font-size: 19px;
+
+    color: #34445c;
+}
+
+
+.process-flow {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 35px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    background: rgba(255,255,255,0.65);
+}
+
+
+.flow-side {
+    width: 140px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: center;
+
+    font-weight: 700;
+
+    color: #3b5480;
+}
+
+
+.flow-side img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.18);
+}
+
+
+.flow-center {
+    flex: 1;
+
+    text-align: center;
+}
+
+
+.flow-center h3 {
+    margin:
+        12px 0;
+
+    font-size: 20px;
+
+    color: #263f6b;
+}
+
+
+.flow-row {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+.flow-row div {
+    min-width: 120px;
+
+    padding: 13px 15px;
+
+    background: white;
+
+    color: #42608a;
+
+    font-size: 13px;
+
+    border:
+        1px solid rgba(70, 90, 110, 0.15);
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.12);
+
+    clip-path:
+        polygon(
+            0 0,
+            90% 0,
+            100% 50%,
+            90% 100%,
+            0 100%,
+            10% 50%
+        );
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 36px;
+    bottom: 80px;
+
+    width: 56px;
+    height: 56px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffbf24,
+            #ff9800
+        );
+
+    color: #172238;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.25);
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.chipin-footer {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-top:
+        2px solid #e69d00;
+
+    background:
+        linear-gradient(
+            90deg,
+            #08072f,
+            #23113e,
+            #8b1d0d
+        );
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.chipin-footer strong {
+    color: #ffbf25;
+
+    margin-left: 5px;
+}
+
+
+.chipin-footer small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #9da8bd;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .chipin-sidebar {
+        width: 270px;
+    }
+
+    .process-flow {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .chipin-layout {
+        flex-direction: column;
+    }
+
+    .chipin-sidebar {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .chipin-menu-item {
+        font-size: 13px;
+    }
+
+    .chipin-content {
+        padding:
+            30px 20px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .chipin-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .chipin-breadcrumb {
+        font-size: 15px;
+    }
+
+    .chipin-title h1 {
+        font-size: 19px;
+    }
+
+}
+.chipin-menu-item {
+    text-decoration: none;
+}
+.process-flow {
+    width: 100%;
+    margin-top: 20px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.process-flow-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}

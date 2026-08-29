@@ -1,0 +1,1935 @@
+/* =========================================================
+   C2S HOME
+========================================================= */
+
+.c2s-home {
+    min-height: 100vh;
+    background: #101e30;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.c2s-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #11114a 0%,
+            #24143e 50%,
+            #721c0e 100%
+        );
+}
+
+
+/* =========================================================
+   TOP BRANDING
+========================================================= */
+
+.c2s-branding {
+    min-height: 140px;
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.ministry-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   INDIA EMBLEM
+========================================================= */
+
+.india-emblem {
+    width: 62px;
+    max-height: 88px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   MINISTRY TEXT
+========================================================= */
+
+.ministry-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.meity-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f5f5f5;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   CHIPS TO STARTUP
+========================================================= */
+
+.chips-brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.chips-text {
+    color: #ffc13d;
+
+    animation:
+        chipsReveal 0.8s ease forwards;
+}
+
+
+.startup-text {
+    color: #69d6a3;
+
+    opacity: 0;
+
+    animation:
+        startupReveal 0.8s ease forwards;
+
+    animation-delay: 0.3s;
+}
+
+
+.c2s-badge {
+    margin-left: 10px;
+
+    padding: 7px 13px;
+
+    border:
+        1px solid rgba(87, 212, 244, 0.7);
+
+    border-radius: 4px;
+
+    color: #57d4f4;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RIGHT HEADER
+========================================================= */
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 8px;
+}
+
+
+.date-time {
+    padding: 8px 16px;
+
+    background:
+        rgba(42, 8, 10, 0.85);
+
+    border-radius: 4px;
+
+    color: #5ce1ff;
+
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   PROGRAMME GIF
+========================================================= */
+
+.programme-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 75px;
+}
+
+
+.programme-logo-gif {
+    width: 250px;
+    max-height: 100px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.c2s-navbar {
+    min-height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    padding: 0 22px;
+
+    background:
+        rgba(8, 13, 43, 0.96);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    overflow-x: auto;
+}
+
+
+.c2s-navbar a {
+    color: #ffc52e;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+
+.c2s-navbar a:hover {
+    color: #ffffff;
+}
+
+
+.login-button {
+    margin-left: auto;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9d00,
+            #ffb51c
+        );
+
+    color: white;
+
+    padding: 10px 42px;
+
+    min-width: 130px;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.login-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 15px rgba(255, 166, 0, 0.3);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.c2s-hero {
+    position: relative;
+
+    min-height: 620px;
+
+    overflow: hidden;
+
+    background:
+        #101e30;
+}
+
+
+/* =========================================================
+   CIRCUIT BACKGROUND
+========================================================= */
+
+.circuit-background {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* GRID */
+
+.circuit-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(80, 125, 160, 0.07) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(80, 125, 160, 0.07) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        140px 140px;
+
+    animation:
+        gridMove 18s linear infinite;
+}
+
+
+/* CIRCUIT LINES */
+
+.circuit-line {
+    position: absolute;
+
+    width: 1px;
+
+    height: 120%;
+
+    background:
+
+        linear-gradient(
+            transparent,
+            rgba(76, 151, 195, 0.35),
+            transparent
+        );
+
+    animation:
+        circuitMove 10s linear infinite;
+}
+
+
+.line-1 {
+    left: 8%;
+}
+
+
+.line-2 {
+    left: 27%;
+    animation-delay: -2s;
+}
+
+
+.line-3 {
+    left: 47%;
+    animation-delay: -4s;
+}
+
+
+.line-4 {
+    left: 68%;
+    animation-delay: -6s;
+}
+
+
+.line-5 {
+    left: 88%;
+    animation-delay: -3s;
+}
+
+
+/* =========================================================
+   CIRCUIT NODES
+========================================================= */
+
+.circuit-node {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #76d7ff;
+
+    box-shadow:
+        0 0 12px #3dbde8;
+
+    animation:
+        nodePulse 3s ease-in-out infinite;
+}
+
+
+.node-1 {
+    top: 22%;
+    left: 15%;
+}
+
+
+.node-2 {
+    top: 52%;
+    left: 34%;
+    animation-delay: 0.4s;
+}
+
+
+.node-3 {
+    top: 28%;
+    left: 54%;
+    animation-delay: 0.8s;
+}
+
+
+.node-4 {
+    top: 70%;
+    left: 72%;
+    animation-delay: 1.2s;
+}
+
+
+.node-5 {
+    top: 38%;
+    left: 90%;
+    animation-delay: 1.6s;
+}
+
+
+.node-6 {
+    top: 84%;
+    left: 18%;
+    animation-delay: 2s;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1450px;
+
+    min-height: 620px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding:
+        60px 10%
+        0;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text {
+    width: 48%;
+
+    align-self: center;
+
+    padding-bottom: 40px;
+}
+
+
+.hero-text h1 {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: clamp(28px, 2.2vw, 38px);
+
+    line-height: 1.45;
+
+    font-weight: 700;
+
+    color: #f5f5f5;
+
+    letter-spacing: 0.3px;
+
+    animation:
+        heroTextReveal 1.2s ease forwards;
+}
+
+
+.hero-text span {
+    color: #8fd4ed;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image {
+    width: 48%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+
+.hero-image img {
+    width: auto;
+
+    max-width: 100%;
+
+    max-height: 600px;
+
+    object-fit: contain;
+
+    display: block;
+
+    animation:
+        heroImageReveal 1.4s ease forwards;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes chipsReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes startupReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes heroTextReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes heroImageReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes circuitMove {
+
+    from {
+        transform:
+            translateY(-12%);
+    }
+
+    to {
+        transform:
+            translateY(12%);
+    }
+
+}
+
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: scale(1.8);
+
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes gridMove {
+
+    from {
+        background-position:
+            0 0,
+            0 0;
+    }
+
+    to {
+        background-position:
+            140px 0,
+            0 140px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .c2s-branding {
+        padding: 18px;
+    }
+
+    .meity-title {
+        font-size: 18px;
+    }
+
+    .programme-logo-gif {
+        width: 190px;
+    }
+
+    .c2s-navbar {
+        gap: 20px;
+    }
+
+    .hero-content {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .c2s-branding {
+        min-height: auto;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .india-emblem {
+        width: 45px;
+    }
+
+    .meity-title {
+        font-size: 15px;
+    }
+
+    .chips-brand {
+        font-size: 22px;
+    }
+
+    .c2s-navbar {
+        gap: 18px;
+    }
+
+    .login-button {
+        min-width: 100px;
+
+        padding:
+            9px 20px;
+    }
+
+    .hero-content {
+        min-height: auto;
+
+        flex-direction: column;
+
+        padding:
+            70px 25px
+            0;
+    }
+
+    .hero-text {
+        width: 100%;
+
+        text-align: center;
+
+        padding-bottom: 30px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-height: 450px;
+    }
+
+}
+
+/* =========================================================
+   HOME INFORMATION SECTION
+========================================================= */
+
+.home-info-section {
+    background: #f1f1f3;
+    color: #243457;
+    padding: 60px 8%;
+}
+
+.info-container {
+    max-width: 1500px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.center-heading h2 {
+    margin: 0;
+    color: inherit;
+    font-size: clamp(20px, 2vw, 34px);
+    letter-spacing: 3px;
+}
+
+.heading-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #11194e;
+    color: white;
+
+    border-radius: 12px;
+    font-size: 24px;
+}
+
+.heading-icon.red {
+    background: #e3263f;
+}
+
+.about-card,
+.updates-card {
+    min-height: 270px;
+
+    background: rgba(255,255,255,0.45);
+
+    border: 1px solid #d2d5dc;
+    border-radius: 25px;
+
+    padding: 28px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.about-card p {
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 1.7;
+    color: #566170;
+}
+
+.about-card strong {
+    color: #253657;
+}
+
+.about-card span {
+    color: #b72f3b;
+    font-weight: 800;
+}
+
+.update-heading {
+    position: relative;
+}
+
+.archive-btn {
+    margin-left: auto;
+
+    border: none;
+    background: #17164d;
+    color: white;
+
+    padding: 12px 24px;
+    border-radius: 10px;
+
+    font-weight: 700;
+}
+
+.updates-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.update-item {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.yellow {
+    background: #ffe4ad;
+}
+
+.pink {
+    background: #f2b1a7;
+}
+
+.green {
+    background: #a9e9a9;
+}
+
+.blue {
+    background: #aeb9e0;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome-section {
+    background: linear-gradient(
+        135deg,
+        #111852,
+        #27347c
+    );
+
+    padding: 55px 8%;
+}
+
+.welcome-card {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background: rgba(49, 59, 123, 0.7);
+
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.center-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    color: white;
+
+    margin-bottom: 40px;
+}
+
+.welcome-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.08);
+}
+
+.heading-line {
+    width: 55px;
+    height: 3px;
+
+    margin: 12px auto 0;
+
+    background: #ff9d47;
+}
+
+
+/* =========================================================
+   CHARKHA TO CHIPS
+========================================================= */
+
+.chakratochips {
+    position: relative;
+
+    width: 420px;
+    height: 180px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.chakra-circle {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle, #7f67b7 10%, transparent 11%),
+        repeating-conic-gradient(
+            #f25ccf 0deg 8deg,
+            #4bd2c8 8deg 16deg
+        );
+
+    box-shadow: 0 0 30px #b85ee5;
+}
+
+.chip-node {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #ffd185;
+
+    border: 8px solid #65432d;
+
+    box-shadow: 0 0 20px #ffaf5e;
+}
+
+.connecting-line {
+    position: absolute;
+
+    width: 210px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.7);
+
+    transform: rotate(25deg);
+}
+
+.chakra-label {
+    position: absolute;
+    bottom: 0;
+
+    padding: 8px 25px;
+
+    background: linear-gradient(90deg,#653744,#5b241f);
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+.welcome-subtitle {
+    text-align: center;
+
+    color: #62c5e7;
+
+    letter-spacing: 3px;
+}
+
+.welcome-media {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.media-card {
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #000;
+
+    border-radius: 15px;
+
+    border: 2px solid #0b0b0b;
+}
+
+.media-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.media-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   OBJECTIVES
+========================================================= */
+
+.objectives-section {
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #4c0f49,
+            #8d1738,
+            #d64c2c
+        );
+}
+
+.objective-grid {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.objective-card {
+    min-height: 190px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.objective-card p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.objective-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    color: #c88d1b;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+.obj-1 { background: #48689f; }
+.obj-2 { background: #15877d; }
+.obj-3 { background: #d52b69; }
+.obj-4 { background: #3a9db9; }
+.obj-5 { background: #f78a10; }
+
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.research-section {
+    padding: 60px 8%;
+
+    background: linear-gradient(
+        #5142a5,
+        #24254e
+    );
+}
+
+.research-card {
+    max-width: 700px;
+
+    margin: auto;
+
+    min-height: 310px;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.08);
+}
+
+.research-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    height: 230px;
+
+    gap: 12px;
+}
+
+.research-item {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    color: white;
+    font-size: 12px;
+}
+
+.research-item span {
+    text-align: center;
+    min-height: 40px;
+}
+
+.bar {
+    margin-top: 10px;
+}
+
+.bar1 {
+    height: 70px;
+    background: linear-gradient(90deg,#6ee27b,#3f8ad7);
+}
+
+.bar2 {
+    height: 100px;
+    background: linear-gradient(90deg,#34b476,#e8c11a);
+}
+
+.bar3 {
+    height: 130px;
+    background: linear-gradient(90deg,#ff7373,#9a4edb);
+}
+
+.bar4 {
+    height: 160px;
+    background: linear-gradient(90deg,#333d6d,#fe9853);
+}
+
+.bar5 {
+    height: 190px;
+    background: linear-gradient(90deg,#7652b7,#50d2dc);
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlights-section {
+    padding: 65px 8%;
+
+    background: #0f2c33;
+}
+
+.highlight-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.highlight-card {
+    min-height: 220px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    color: white;
+}
+
+.highlight-card h3 {
+    margin-top: 0;
+
+    color: #ffb451;
+}
+
+.highlight-card p {
+    color: #cbd6d9;
+
+    line-height: 1.7;
+}
+
+.highlight-card button {
+    margin-top: 20px;
+
+    border: none;
+
+    padding: 10px 35px;
+
+    border-radius: 0 0 10px 10px;
+
+    background: #ff9d50;
+
+    color: white;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    padding: 65px 8%;
+
+    background: #13243a;
+}
+
+.contact-container {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 25px;
+}
+
+.contact-emblem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2a374a;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 12px;
+}
+
+.contact-emblem img {
+    width: 90px;
+    filter: brightness(0) invert(1);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-row {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1.5fr
+        1fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 25px;
+
+    border-left: 7px solid #3488e8;
+
+    border-radius: 10px;
+
+    background: #c8d3e6;
+
+    color: #25415e;
+}
+
+.contact-row.second {
+    border-left-color: #38a852;
+
+    background: #d3e8d1;
+}
+
+.email-box {
+    padding: 14px;
+
+    border-radius: 8px;
+
+    background: #14508f;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.green-email {
+    background: #13731b;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.c2s-footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border-top: 1px solid #e1a71d;
+
+    background:
+        linear-gradient(
+            90deg,
+            #09082d,
+            #25113b,
+            #72190c
+        );
+
+    color: white;
+}
+
+.c2s-footer p {
+    margin: 0 0 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.c2s-footer span {
+    color: #ffbc3e;
+}
+
+.c2s-footer small {
+    color: #aeb7ca;
+}
+
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+.scroll-top {
+    position: fixed;
+
+    right: 35px;
+    bottom: 35px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffad16;
+
+    color: #151515;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 50;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   RESPONSIVE EXTRA
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .objective-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .welcome-media,
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .objective-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chakratochips {
+        width: 100%;
+        transform: scale(0.8);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-emblem {
+        padding: 30px;
+    }
+
+    .contact-row {
+        grid-template-columns: 1fr;
+    }
+
+    .info-container {
+        gap: 30px;
+    }
+
+}
+
+/* =========================================================
+   ADVANCED ANIMATED CIRCUIT BACKGROUND
+========================================================= */
+
+.circuit-path {
+    position: absolute;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(35, 160, 255, 0.15),
+            rgba(35, 160, 255, 0.6),
+            rgba(35, 160, 255, 0.15),
+            transparent
+        );
+
+    overflow: visible;
+
+    opacity: 0.8;
+}
+
+
+/* CIRCUIT PATH POSITIONS */
+
+.path-1 {
+    width: 38%;
+    top: 22%;
+    left: -5%;
+
+    transform: rotate(8deg);
+}
+
+
+.path-2 {
+    width: 35%;
+    top: 42%;
+    left: 12%;
+
+    transform: rotate(-10deg);
+}
+
+
+.path-3 {
+    width: 32%;
+    top: 70%;
+    left: 3%;
+
+    transform: rotate(6deg);
+}
+
+
+.path-4 {
+    width: 38%;
+    top: 18%;
+    right: -5%;
+
+    transform: rotate(-8deg);
+}
+
+
+.path-5 {
+    width: 34%;
+    top: 55%;
+    right: 8%;
+
+    transform: rotate(12deg);
+}
+
+
+.path-6 {
+    width: 42%;
+    bottom: 15%;
+    right: -10%;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   MOVING ELECTRIC SIGNAL
+========================================================= */
+
+.signal {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform: translateY(-50%);
+
+    background: #5cdcff;
+
+    box-shadow:
+        0 0 8px #5cdcff,
+        0 0 18px #259cff,
+        0 0 35px rgba(37, 156, 255, 0.7);
+
+    animation:
+        signalTravel 5s linear infinite;
+}
+
+
+.signal-2 {
+    animation-delay: -1.2s;
+}
+
+
+.signal-3 {
+    animation-delay: -2.5s;
+}
+
+
+.signal-4 {
+    animation-delay: -3.2s;
+}
+
+
+.signal-5 {
+    animation-delay: -1.8s;
+}
+
+
+.signal-6 {
+    animation-delay: -4s;
+}
+
+
+@keyframes signalTravel {
+
+    from {
+        left: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    to {
+        left: 100%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA CIRCUIT NODES
+========================================================= */
+
+.node-7 {
+    top: 18%;
+    left: 43%;
+
+    animation-delay: 0.7s;
+}
+
+
+.node-8 {
+    top: 35%;
+    left: 78%;
+
+    animation-delay: 1.4s;
+}
+
+
+.node-9 {
+    top: 76%;
+    left: 48%;
+
+    animation-delay: 2.1s;
+}
+
+
+.node-10 {
+    top: 58%;
+    left: 92%;
+
+    animation-delay: 0.9s;
+}
+
+
+/* =========================================================
+   FLOATING TECH PARTICLES
+========================================================= */
+
+.tech-particle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: rgba(98, 213, 255, 0.8);
+
+    box-shadow:
+        0 0 8px rgba(74, 194, 255, 0.8);
+
+    animation:
+        particleFloat 8s ease-in-out infinite;
+}
+
+
+.particle-1 {
+    top: 14%;
+    left: 10%;
+}
+
+
+.particle-2 {
+    top: 30%;
+    left: 30%;
+
+    animation-delay: -2s;
+}
+
+
+.particle-3 {
+    top: 15%;
+    left: 65%;
+
+    animation-delay: -4s;
+}
+
+
+.particle-4 {
+    top: 40%;
+    right: 12%;
+
+    animation-delay: -1s;
+}
+
+
+.particle-5 {
+    bottom: 18%;
+    left: 18%;
+
+    animation-delay: -5s;
+}
+
+
+.particle-6 {
+    bottom: 28%;
+    left: 58%;
+
+    animation-delay: -3s;
+}
+
+
+.particle-7 {
+    bottom: 10%;
+    right: 25%;
+
+    animation-delay: -6s;
+}
+
+
+.particle-8 {
+    top: 65%;
+    right: 5%;
+
+    animation-delay: -2.5s;
+}
+
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translate(20px, -35px);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   SUBTLE HERO IMAGE FLOAT
+========================================================= */
+
+.hero-image img {
+    animation:
+        heroImageReveal 1.4s ease forwards,
+        modiFloat 6s ease-in-out infinite;
+}
+
+
+@keyframes modiFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+/* =========================================================
+   GLOBAL C2S HEADER — INNER PAGE MODE
+   ========================================================= */
+
+.c2s-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    width: 100%;
+    max-height: 185px;
+
+    isolation: isolate;
+}
+
+/* Compact branding */
+
+.c2s-header > .c2s-branding {
+    min-height: 125px;
+    height: 125px;
+}
+
+/* Compact navbar */
+
+.c2s-header > .c2s-navbar {
+    min-height: 58px;
+    height: 58px;
+}
+
+/* =========================================================
+   GLOBAL FIXED C2S HEADER
+   ========================================================= */
+
+.c2s-header {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    z-index: 10000;
+
+    max-height: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #11114a 0%,
+            #24143e 50%,
+            #721c0e 100%
+        );
+}
+
+
+/* =========================================================
+   HEADER BRANDING
+   ========================================================= */
+
+.c2s-header .c2s-branding {
+    min-height: 125px;
+    height: 125px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER NAVBAR
+   ========================================================= */
+
+.c2s-header .c2s-navbar {
+    min-height: 58px;
+    height: 58px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY OFFSET
+   ========================================================= */
+
+/*
+   Header height:
+   Branding = 125px
+   Navbar   = 58px
+   Total    = 183px
+*/
+
+body {
+    padding-top: 183px;
+}
+
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+.c2s-home {
+    overflow-x: clip;
+}
+
