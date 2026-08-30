@@ -156,6 +156,23 @@ def ask_rag(
     )
 
     # =========================================================
+    # VALIDATE RESPONSE TYPE
+    # =========================================================
+
+    response_type = answer.get("response_type")
+
+    if response_type not in {
+        "normal",
+        "troubleshooting",
+    }:
+        logger.warning(
+            "Invalid or missing response_type from LLM: %s",
+            response_type,
+        )
+
+        answer["response_type"] = "normal"
+
+    # =========================================================
     # 5. COLLECT IMAGES
     # =========================================================
 

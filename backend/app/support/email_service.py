@@ -1,10 +1,26 @@
 import os
 import smtplib
 
+import resend
+
 from email.message import EmailMessage
 from pathlib import Path
 
 from app.database.models import SupportTicket
+
+
+# --------------------------------
+# Resend API configuration
+# --------------------------------
+
+RESEND_API_KEY = os.getenv(
+    "RESEND_API_KEY"
+)
+
+RESEND_FROM_EMAIL = os.getenv(
+    "RESEND_FROM_EMAIL",
+    "onboarding@resend.dev",
+)
 
 
 # --------------------------------
@@ -43,28 +59,20 @@ def send_ticket_email(
     """
     Send a support ticket notification email.
 
+    Primary:
+        Resend API
+
+    Fallback:
+        SMTP
+
     Includes ticket details and attaches
     the screenshot if one was uploaded.
     """
 
     # --------------------------------
-    # 1. Validate email configuration
+    # 1. Validate recipients
     # --------------------------------
 
-    if not SMTP_USERNAME:
-
-        raise ValueError(
-            "SMTP_USERNAME is not configured."
-        )
-
-    if not SMTP_PASSWORD:
-
-        raise ValueError(
-            "SMTP_PASSWORD is not configured."
-        )
-
-    # Convert comma-separated emails
-    # into a clean list of recipients
     recipients = [
         email.strip()
         for email in SUPPORT_EMAILS.split(",")
@@ -88,20 +96,11 @@ def send_ticket_email(
         module_name = ticket.module.name
 
     # --------------------------------
-    # 3. Build email
+    # 3. Build email content
     # --------------------------------
 
-    message = EmailMessage()
-
-    message["Subject"] = (
+    subject = (
         f"New Support Ticket: {ticket.ticket_id}"
-    )
-
-    message["From"] = SMTP_USERNAME
-
-    # Show all support recipients
-    message["To"] = ", ".join(
-        recipients
     )
 
     email_body = f"""
@@ -156,12 +155,113 @@ Additional Details:
 {ticket.additional_details or "Not provided"}
 """
 
+    # ================================================
+    # 4. TRY RESEND API FIRST
+    # ================================================
+
+    if RESEND_API_KEY:
+
+        try:
+
+            resend.api_key = RESEND_API_KEY
+
+            params = {
+                "from": RESEND_FROM_EMAIL,
+                "to": recipients,
+                "subject": subject,
+                "text": email_body,
+            }
+
+            # --------------------------------
+            # Attach screenshot if available
+            # --------------------------------
+
+            if ticket.screenshot_path:
+
+                screenshot_path = Path(
+                    ticket.screenshot_path
+                )
+
+                if screenshot_path.exists():
+
+                    import base64
+
+                    file_data = (
+                        screenshot_path.read_bytes()
+                    )
+
+                    encoded_file = (
+                        base64.b64encode(
+                            file_data
+                        ).decode("utf-8")
+                    )
+
+                    params["attachments"] = [
+                        {
+                            "filename": screenshot_path.name,
+                            "content": encoded_file,
+                        }
+                    ]
+
+            resend.Emails.send(
+                params
+            )
+
+            print(
+                "Ticket email sent successfully using Resend API."
+            )
+
+            return
+
+        except Exception as e:
+
+            print(
+                f"Resend email failed: {e}"
+            )
+
+            print(
+                "Falling back to SMTP..."
+            )
+
+    else:
+
+        print(
+            "RESEND_API_KEY not configured. "
+            "Falling back to SMTP..."
+        )
+
+    # ================================================
+    # 5. FALLBACK TO SMTP
+    # ================================================
+
+    if not SMTP_USERNAME:
+
+        raise ValueError(
+            "SMTP_USERNAME is not configured."
+        )
+
+    if not SMTP_PASSWORD:
+
+        raise ValueError(
+            "SMTP_PASSWORD is not configured."
+        )
+
+    message = EmailMessage()
+
+    message["Subject"] = subject
+
+    message["From"] = SMTP_USERNAME
+
+    message["To"] = ", ".join(
+        recipients
+    )
+
     message.set_content(
         email_body
     )
 
     # --------------------------------
-    # 4. Attach screenshot
+    # Attach screenshot
     # --------------------------------
 
     if ticket.screenshot_path:
@@ -206,21 +306,36 @@ Additional Details:
             )
 
     # --------------------------------
-    # 5. Send email
+    # Send using SMTP
     # --------------------------------
 
-    with smtplib.SMTP(
-        SMTP_HOST,
-        SMTP_PORT,
-    ) as server:
+    try:
 
-        server.starttls()
+        with smtplib.SMTP(
+            SMTP_HOST,
+            SMTP_PORT,
+            timeout=10,
+        ) as server:
 
-        server.login(
-            SMTP_USERNAME,
-            SMTP_PASSWORD,
+            server.starttls()
+
+            server.login(
+                SMTP_USERNAME,
+                SMTP_PASSWORD,
+            )
+
+            server.send_message(
+                message
+            )
+
+        print(
+            "Ticket email sent successfully using SMTP."
         )
 
-        server.send_message(
-            message
+    except Exception as e:
+
+        print(
+            f"SMTP email failed: {e}"
         )
+
+        raise

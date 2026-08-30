@@ -545,21 +545,18 @@ function ChatMessage({ message }) {
                 )}
 
 
-                {/* =================================================
+               {/* =================================================
                     SUPPORT ACTIONS
                 ================================================= */}
 
                 {!response.needs_clarification &&
-                    response.summary && (
+                    response.response_type === "troubleshooting" && (
 
                     <div className="chat-support-actions">
 
                         <div className="chat-support-question">
-
                             Is your issue resolved?
-
                         </div>
-
 
                         <div className="chat-support-buttons">
 
@@ -572,17 +569,13 @@ function ChatMessage({ message }) {
                                 ✓ Issue Resolved
                             </button>
 
-
                             {/* RAISE TICKET */}
-
                             <button
                                 type="button"
                                 className="chat-ticket-button"
                                 onClick={openTicketForm}
                             >
-
                                 🎫 Raise a Ticket
-
                             </button>
 
                         </div>
