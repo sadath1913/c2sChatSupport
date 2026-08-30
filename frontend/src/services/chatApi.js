@@ -1,7 +1,8 @@
 const API_URL =
     import.meta.env.VITE_API_URL ||
-    "http://localhost:8000";
-
+    (import.meta.env.DEV
+        ? "http://localhost:8000"
+        : "https://c2schatsupport-1-zo8z.onrender.com");
 
 export async function postChatMessage(
     message,
