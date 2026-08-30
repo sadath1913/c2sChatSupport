@@ -1,27 +1,29 @@
-from sentence_transformers import SentenceTransformer
+import os
+import httpx
 
-model = None
 
-
-def get_model():
-    global model
-
-    if model is None:
-        print("Loading embedding model...")
-        model = SentenceTransformer(
-            "sentence-transformers/all-MiniLM-L6-v2"
-        )
-        print("Embedding model loaded.")
-
-    return model
+EMBEDDING_SERVICE_URL = os.getenv(
+    "EMBEDDING_SERVICE_URL"
+)
 
 
 def generate_embedding(text: str):
-    embedding_model = get_model()
 
-    embedding = embedding_model.encode(
-        text,
-        normalize_embeddings=True,
+    if not EMBEDDING_SERVICE_URL:
+        raise RuntimeError(
+            "EMBEDDING_SERVICE_URL environment variable is not set."
+        )
+
+    response = httpx.post(
+        f"{EMBEDDING_SERVICE_URL}/embed",
+        json={
+            "text": text
+        },
+        timeout=60.0,
     )
 
-    return embedding.tolist()
+    response.raise_for_status()
+
+    data = response.json()
+
+    return data["embedding"]
